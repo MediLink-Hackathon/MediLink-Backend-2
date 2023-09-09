@@ -1,0 +1,19 @@
+{
+  "name": "medilink",
+  "version": "1.0.0",
+  "description": "Project submission for the 2023 MediHacks hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreNIH/MediHacks-2023.git"
+  },
+  "author": "Fox-Coding-RHCP",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AndreNIH/MediHacks-2023/issues"
+  },
+  "homepage": "https://github.com/AndreNIH/MediHacks-2023#readme"
+}
