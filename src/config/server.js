@@ -1,2 +1,4 @@
 const PORT = 3000;
-module.exports = {PORT}
+const JWT_SIGNING = process.env.JWT_SIGNING
+
+module.exports = {PORT, JWT_SIGNING}

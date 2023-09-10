@@ -1,8 +1,7 @@
 const express = require("express")
 const userRoute = express.Router()
 const bcrypt = require('bcrypt')
-
-
+const { Snowflake } = require('nodejs-snowflake');
 const {User} = require('../../models')
 
 
@@ -14,10 +13,18 @@ userRoute.get("/", async (req, res) => {
 
 userRoute.post("/", async (req, res) => {
     try{
-        const user = await User.create(req.body)
+        // Initialize snowflake
+        var snowflake = new Snowflake()
+        const passwordHash = await bcrypt.hash(req.body.password, 10)
+        const user = await User.create({
+            ...req.body, 
+            userId: snowflake.getUniqueID(),
+            password: passwordHash
+        })
         res.json(user);
-    }catch(error){
-        res.status(400).json({error})
+    }catch(ex){
+        console.log(ex)
+        res.status(400).json({error:ex})
     }
 })
 

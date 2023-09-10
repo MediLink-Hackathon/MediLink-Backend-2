@@ -16,6 +16,6 @@ User.hasMany(Campaign, {foreignKey: 'doctorId', as: 'assignedDoctorCampaign'})
 User.hasMany(Campaign, {foreignKey: 'patiendId', as: 'pacientHasCampaign'})
 
 
-sequelize.sync({force:true})
+sequelize.sync({force:false})
 
 module.exports = {User, Campaign, Appointment, Sponsor, SenderDetails}
