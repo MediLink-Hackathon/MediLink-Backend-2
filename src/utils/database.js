@@ -10,6 +10,7 @@ const sequelize = new Sequelize(
     DB_CONFIG.DATABASE_USER,
     DB_CONFIG.DATABASE_PASSWORD,{
         dialect:'mssql',
+        logging: true,
         host: DB_CONFIG.DATABASE_HOST,
         dialectModule: tedious,
         dialectOptions:{
