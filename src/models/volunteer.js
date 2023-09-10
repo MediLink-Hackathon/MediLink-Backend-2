@@ -3,7 +3,10 @@ const {sequelize} = require('../util/database')
 
 class Volunteer extends Model{}
 Volunteer.init({
-    idVolunteer:{primaryKey:true},
+    idVolunteer:{
+        type:DataTypes.STRING,
+        primaryKey:true
+    },
     firstName:{
         type:DataTypes.STRING,
         allowNull:true
