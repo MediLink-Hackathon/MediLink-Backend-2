@@ -20,7 +20,8 @@
   "homepage": "https://github.com/AndreNIH/MediHacks-2023#readme",
   "dependencies": {
     "bcrypt": "^5.1.1",
-    "express": "^4.18.2"
+    "express": "^4.18.2",
+    "sequelize": "^6.33.0"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
