@@ -9,14 +9,16 @@ const {User} = require('../../models')
 userRoute.get("/", async (req, res) => {
     const users = await User.findAll();
     res.json(users)
+    return;
 })
 
 userRoute.post("/", async (req, res) => {
-    const {email, username, password, first_name, last_name, phone} = req.body
-    const saltRounds = 10;
-    const passwordHash = await bcrypt.hash(password, saltRounds)
-
-    res.send('User Created')
+    try{
+        const user = await User.create(req.body)
+        res.json(user);
+    }catch(error){
+        res.status(400).json({error})
+    }
 })
 
 module.exports = userRoute

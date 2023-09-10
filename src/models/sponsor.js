@@ -1,12 +1,13 @@
-const {Model,DataTypes} = require('sequelize')
+const {Model, DataTypes} = require('sequelize') 
 const {sequelize} = require('../utils/database')
 
-class Volunteer extends Model{}
-Volunteer.init({
-    idVolunteer:{
+class Sponsor extends Model{}
+Sponsor.init({
+    idTransaction:{
         type:DataTypes.STRING,
         primaryKey:true
     },
+
     firstName:{
         type:DataTypes.STRING,
         allowNull:true
@@ -14,14 +15,23 @@ Volunteer.init({
     lastName:{
         type:DataTypes.STRING,
         allowNull:true
+    },
+    amount:{
+        type:DataTypes.STRING,
+        allowNull:false
+    },
+    transactionDate:{
+        type:DataTypes.DATE,
+        allowNull:false
     }
 },
 {
     sequelize,
     underscored: true,
     timestamps: false,
-    modelName: 'volunteer'
+    modelName: 'sponsor'
 }
 )
 
-module.exports = Volunteer
+
+module.exports = Sponsor
