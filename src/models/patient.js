@@ -26,4 +26,4 @@ Patient.init({
 
 })
 
-exports.module = Patient
+module.exports = Patient
