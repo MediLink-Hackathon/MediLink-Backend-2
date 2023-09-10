@@ -5,6 +5,7 @@ const Volunteer = require('./volunteer')
 const SupportMessage = require('./support_message')
 const FinancialTransaction = require('./financial_transaction')
 const Funding = require('./funding')
+const Distributor = require('./distributor')
 
 //Create tables matching model schema
 User.sync()
@@ -14,6 +15,7 @@ Volunteer.sync()
 SupportMessage.sync()
 FinancialTransaction.sync()
 Funding.sync()
+Distributor.sync()
 
 
 module.exports = {
@@ -23,5 +25,6 @@ module.exports = {
     Volunteer,
     SupportMessage,
     FinancialTransaction,
-    Funding
+    Funding,
+    Distributor
 }
