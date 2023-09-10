@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize')
-const {sequelize} = require('../util/database')
+const {sequelize} = require('../utils/database')
 
 class SupportMessage extends Model{}
 SupportMessage.init({
@@ -12,6 +12,13 @@ SupportMessage.init({
         type:DataTypes.STRING,
         allowNull:false
     }
-})
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'support_message'
+}
+)
 
 module.exports = SupportMessage

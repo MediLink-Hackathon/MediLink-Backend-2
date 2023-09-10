@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize')
-const {sequelize} = require('../util/database')
+const {sequelize} = require('../utils/database')
 
 class Funding extends Model{}
 Funding.init({
@@ -8,9 +8,16 @@ Funding.init({
         autoIncrement:true,
         primaryKey:true
     },
-
-
-})
+    
+    
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'funding'
+}
+)
 
 
 module.exports = Funding

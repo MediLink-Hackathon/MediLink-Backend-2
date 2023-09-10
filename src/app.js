@@ -19,7 +19,7 @@ app.use(express.static('public'))
 
 
 //Routers
-app.use('/api/signup/', userRouter)
+app.use('/api/users/', userRouter)
 app.use(unknownEndpoint)
 
 

@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize') 
-const {sequelize} = require('../util/database')
+const {sequelize} = require('../utils/database')
 
 class FinancialTransaction extends Model{}
 FinancialTransaction.init({
@@ -16,7 +16,14 @@ FinancialTransaction.init({
         type:DataTypes.DATE,
         allowNull:false
     }
-})
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'financial_transaction'
+}
+)
 
 
 module.exports = FinancialTransaction

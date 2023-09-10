@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize')
-const {sequelize} = requie('../util/database')
+const {sequelize} = require('../utils/database')
 
 class Patient extends Model{}
 Patient.init({
@@ -23,7 +23,14 @@ Patient.init({
         type:DataTypes.INTEGER,
         allowNull: true
     }
-
-})
+    
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'patient'
+}
+)
 
 module.exports = Patient

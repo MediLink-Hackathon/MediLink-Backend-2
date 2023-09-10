@@ -2,10 +2,13 @@ const express = require("express")
 const userRoute = express.Router()
 const bcrypt = require('bcrypt')
 
-userRoute.get("/", (req, res) => {
-    
+
+const {User} = require('../../models')
 
 
+userRoute.get("/", async (req, res) => {
+    const users = await User.findAll();
+    res.json(users)
 })
 
 userRoute.post("/", async (req, res) => {

@@ -1,5 +1,5 @@
 const {Model, DataTypes} = require('sequelize')
-const {sequelize} = require('../util/database')
+const {sequelize} = require('../utils/database')
 
 class Psychologist extends Model{}
 Psychologist.init({
@@ -40,10 +40,17 @@ Psychologist.init({
         allowNull: false
     },
     External_Reviews:{
-        type:DataTypes.INT,
+        type:DataTypes.INTEGER,
         allowNull: true
     }
-
-})
+    
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'psychologist'
+}
+)
 
 module.exports = Psychologist

@@ -1,5 +1,5 @@
 const {Model,DataTypes} = require('sequelize')
-const {sequelize} = require('../util/database')
+const {sequelize} = require('../utils/database')
 
 class Volunteer extends Model{}
 Volunteer.init({
@@ -15,6 +15,13 @@ Volunteer.init({
         type:DataTypes.STRING,
         allowNull:true
     }
-})
+},
+{
+    sequelize,
+    underscored: true,
+    timestamps: false,
+    modelName: 'volunteer'
+}
+)
 
 module.exports = Volunteer
