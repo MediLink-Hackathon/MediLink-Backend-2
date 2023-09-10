@@ -1,0 +1,15 @@
+
+const DATABASE_HOST = process.env.DATABASE_HOST
+const DATABACE_INSTANCE = process.env.DATABASE_INSTANCE
+const DATABASE_USER = process.env.DATABASE_USER
+const DATABASE_PASSWORD = process.env.DATABASE_PASSWORD
+
+
+
+
+module.exports = {
+    DATABASE_HOST,
+    DATABACE_INSTANCE,
+    DATABASE_USER,
+    DATABASE_PASSWORD
+};
