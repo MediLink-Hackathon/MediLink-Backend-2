@@ -7,7 +7,7 @@ Funding.init({
         type:DataTypes.INTEGER,
         autoIncrement:true,
         primaryKey:true
-    },
+    }
     
     
 },
